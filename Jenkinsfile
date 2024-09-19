@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        maven 'localMaven'
+        maven 'M2_HOME'
     }
 
     parameters {

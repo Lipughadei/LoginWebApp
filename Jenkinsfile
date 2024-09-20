@@ -31,6 +31,9 @@ pipeline {
                             sshPut remote: remote, from: 'Dockerfile', into: '.'
                             sshCommand remote: remote, command: "sudo docker build -t tomcat ."
                             sshCommand remote: remote, command: "sudo docker image ls -a"
+                            sshCommand remote: remote, command: "sudo docker run --name tomcat-c -d -p 8080:8080 tomcat"
+                            // sshCommand remote: remote, command: "sudo chown $USER:$USER /var/run/docker.sock"
+                            sshCommand remote: remote, command: "sudo docker container ls -a"
                             sshCommand remote: remote, command: "ls -lrt"
                     }
                 }

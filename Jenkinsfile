@@ -29,6 +29,8 @@ pipeline {
                             sshCommand remote: remote, command: "ls -lrt | pwd"
                             sshPut remote: remote, from: 'target/LoginWebApp.war', into: '.'
                             sshPut remote: remote, from: 'Dockerfile', into: '.'
+                            sshCommand remote: remote, command: "docker build -t tomcat ."
+                            sshCommand remote: remote, command: "docker image ls -a"
                             sshCommand remote: remote, command: "ls -lrt"
                     }
                 }

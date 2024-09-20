@@ -28,7 +28,7 @@ pipeline {
                             
                             sshCommand remote: remote, command: "ls -lrt | pwd"
                             sshPut remote: remote, from: 'target/LoginWebApp.war', into: '.'
-                            // sshPut remote: remote, from: 'target/LoginWebApp.war', into: '.'
+                            sshPut remote: remote, from: 'Dockerfile', into: '.'
                             sshCommand remote: remote, command: "ls -lrt"
                     }
                 }

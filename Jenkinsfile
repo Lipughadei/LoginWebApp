@@ -26,6 +26,8 @@ pipeline {
                 remote.allowAnyHosts = true
                 remote.user = username
                 remote.identityFile = keyFile
+
+                sshCommand remote: remote, command: "ls -lrt"
                 }
             }
         }

@@ -28,6 +28,7 @@ pipeline {
                             
                             sshCommand remote: remote, command: "ls -lrt"
                             sshPut remote: remote, from: 'target/LoginWebApp.war', into: '.'
+                            sshCommand remote: remote, command: "ls -lrt"
                     }
                 }
             }

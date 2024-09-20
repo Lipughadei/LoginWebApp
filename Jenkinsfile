@@ -4,7 +4,7 @@ pipeline {
         maven 'M2_HOME'
     }
     stages {
-        stage ('build') {
+        stage ('checkout') {
             steps {
                 git branch: 'master',
                 url: 'https://github.com/Lipughadei/LoginWebApp.git'

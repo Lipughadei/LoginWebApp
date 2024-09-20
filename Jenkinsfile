@@ -26,8 +26,9 @@ pipeline {
                             remote.user = username
                             remote.identityFile = keyFile
                             
-                            sshCommand remote: remote, command: "ls -lrt"
+                            sshCommand remote: remote, command: "ls -lrt | pwd"
                             sshPut remote: remote, from: 'target/LoginWebApp.war', into: '.'
+                            // sshPut remote: remote, from: 'target/LoginWebApp.war', into: '.'
                             sshCommand remote: remote, command: "ls -lrt"
                     }
                 }

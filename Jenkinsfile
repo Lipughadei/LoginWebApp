@@ -38,9 +38,9 @@ pipeline {
                
             }
         }
-        stage ('') {
+        stage ('building the image and pushing it to the dockerhub') {
             steps {
-
+                
             }
         }
     //     stage ('deployment') {

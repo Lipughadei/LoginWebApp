@@ -1,7 +1,7 @@
 pipeline {
-    agent any {
-        label 
-    }
+    agent any //{
+      //  label 
+    //}
     tools {
         maven 'M2_HOME'
     }

@@ -69,7 +69,8 @@ pipeline {
             steps {
                 script {
                     withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-credential', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
-                        sh 'aws s3 cp s3://bucket-war/artifactory/ .'
+                        sh 'aws --version'
+                        // sh 'aws s3 cp s3://bucket-war/artifactory/ .'
                     }
                 }
             }

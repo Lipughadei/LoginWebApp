@@ -22,7 +22,13 @@ pipeline {
                 }
             }
         }
-        stage ('')
+        stage ('upload to s3 bucket') {
+            steps {
+                withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-credential', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+                    sh 'aws s3 ls'
+                }
+            }
+        }
         //stage ('deployment') {
           //  steps {
             //    script {

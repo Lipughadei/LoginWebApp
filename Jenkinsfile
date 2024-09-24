@@ -71,6 +71,7 @@ pipeline {
                     withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-credential', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
                         sh 'aws --version'
                         sh 'aws s3 cp s3://bucket-war/artifactory/LoginWebApp.war .'
+                        sh 'mv /home/ec2-user/jenkins/workspace/pipeline_job/LoginWebApp.war .'
                     }
                 }
             }

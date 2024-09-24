@@ -39,8 +39,16 @@ pipeline {
             }
         }
         stage ('building the image and pushing it to the dockerhub') {
+            agent {
+                label 'agent1'
+            }
             steps {
-                
+                script {
+                     withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-credential', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+                        sh 'aws s3 cp s3://bucket-war/artifactory/ .'
+                     }
+                }
+                }
             }
         }
     //     stage ('deployment') {

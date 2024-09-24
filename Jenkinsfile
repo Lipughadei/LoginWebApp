@@ -22,12 +22,17 @@ pipeline {
                 }
             }
         }
-        stage ('upload to s3 bucket') {
+        // stage ('upload to s3 bucket') {
+        //     steps {
+        //         withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-credential', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+        //             sh 'aws s3 ls'
+        //             sh 'aws s3 cp target/*.war s3://bucket-war/artifactory/'
+        //         }
+        //     }
+        // }
+        stage ('upload through the s3 upload plugin') {
             steps {
-                withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-credential', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
-                    sh 'aws s3 ls'
-                    sh 'aws s3 cp target/*.war s3://bucket-war/artifactory/'
-                }
+                s3Upload acl: 'Private', bucket: 'bucket-war', cacheControl: '', excludePathPattern: '', file: 'target/*.war', includePathPattern: '', metadatas: [''], path: 'bucket-war/artifactory/', redirectLocation: '', sseAlgorithm: '', tags: '', text: '', workingDir: '.'
             }
         }
         //stage ('deployment') {

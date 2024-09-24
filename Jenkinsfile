@@ -32,10 +32,11 @@ pipeline {
         // }
         stage ('upload through the s3 upload plugin') {
             steps {
+                def warFile = findFiles(glob: 'target/*.war')[0]
                 //s3Upload acl: 'Private', bucket: 'bucket-war', cacheControl: '', excludePathPattern: '', file: 'target/*.war', includePathPattern: '', metadatas: [''], path: 'bucket-war/artifactory/', redirectLocation: '', sseAlgorithm: '', tags: '', text: '', workingDir: '.'
                       s3Upload(
                     bucket: 'bucket-war',
-                    file: 'target/*.war',
+                    file: warFile,
                     acl: 'PublicRead')
             }
         }

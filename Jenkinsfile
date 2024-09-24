@@ -33,13 +33,7 @@ pipeline {
         stage ('upload through the s3 upload plugin') {
             steps {
                 script {
-                    def warFile = new File('target').listFiles().find { it.name.endsWith('.war') }
-
-                    s3Upload(
-                    bucket: 'bucket-war',
-                    file: warFile,
-                    acl: 'PublicRead'
-                    )
+                    s3Upload consoleLogLevel: 'INFO', dontSetBuildResultOnFailure: false, dontWaitForConcurrentBuildCompletion: false, entries: [[bucket: 'bucket-war/artifactory/', excludedFile: '', flatten: false, gzipFiles: false, keepForever: false, managedArtifacts: false, noUploadOnFailure: false, selectedRegion: 'ap-south-1', showDirectlyInBrowser: false, sourceFile: 'target/*.war', storageClass: 'STANDARD', uploadFromSlave: false, useServerSideEncryption: false]], pluginFailureResultConstraint: 'FAILURE', profileName: 's3war', userMetadata: []
                 }
                
             }

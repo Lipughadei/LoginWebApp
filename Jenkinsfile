@@ -90,7 +90,7 @@ pipeline {
                 }
             }
         }
-        stag('ansible')
+        // stag('ansible')
         // stage('deployment') {
         //     steps {
         //         script {

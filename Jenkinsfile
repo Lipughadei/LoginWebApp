@@ -90,7 +90,15 @@ pipeline {
                 }
             }
         }
-        // stag('ansible')
+        stag('ansible'){
+            agent {
+                label 'agent2'
+            }
+            steps {
+                sh 'pwd'
+                sh 'ls -la'
+            }
+        }
         // stage('deployment') {
         //     steps {
         //         script {

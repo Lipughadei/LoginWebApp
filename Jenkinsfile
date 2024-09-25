@@ -78,15 +78,15 @@ pipeline {
                         sh 'sudo docker image prune -a -f'
                         sh 'pwd'
                         sh 'ls -la'
-                        sh 'sudo docker build -t lipughadei/tomcat:v1.0 -f Dockerfile-tomcat /home/ec2-user/jenkins/workspace/pipeline_job'
-                        sh 'sudo docker build -t lipughadei/mysql:v1.0 -f Dockerfile-mysql /home/ec2-user/jenkins/workspace/pipeline_job'
+                        // sh 'sudo docker build -t lipughadei/tomcat:v1.0 -f Dockerfile-tomcat /home/ec2-user/jenkins/workspace/pipeline_job'
+                        // sh 'sudo docker build -t lipughadei/mysql:v1.0 -f Dockerfile-mysql /home/ec2-user/jenkins/workspace/pipeline_job'
                         // sh 'sudo docker tag tomcat:1.0 lipughadei/tomcat:v1.0'
                         // sh 'sudo docker tag mysql:1.0 lipughadei/mysql:v1.0'
                         // sh 'docker login -u “lipughadei” -p “Dockerhammer1@” docker.io' ///it is a insecure way
-                        sh 'sudo docker login -u "lipughadei" --password Dockerhammer1@ docker.io'
+                        // sh 'sudo docker login -u "lipughadei" --password Dockerhammer1@ docker.io'
                         // sh 'echo "Dockerhammer1@" | docker login -u "lipughadei" --password-stdin docker.io'
-                        sh 'sudo docker push lipughadei/tomcat:v1.0'
-                        sh 'sudo docker push lipughadei/mysql:v1.0'
+                        // sh 'sudo docker push lipughadei/tomcat:v1.0'
+                        // sh 'sudo docker push lipughadei/mysql:v1.0'
                     }
                 }
             }

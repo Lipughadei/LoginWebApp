@@ -78,7 +78,7 @@ pipeline {
                         sh 'pwd'
                         sh 'ls -la'
                         sh 'sudo docker build -t tomcat -f Dockerfile-tomcat /home/ec2-user/jenkins/workspace/pipeline_job'
-                        sh 'sudo docker build -t tomcat -f Dockerfile-mysql /home/ec2-user/jenkins/workspace/pipeline_job'
+                        sh 'sudo docker build -t mysql -f Dockerfile-mysql /home/ec2-user/jenkins/workspace/pipeline_job'
                     }
                 }
             }

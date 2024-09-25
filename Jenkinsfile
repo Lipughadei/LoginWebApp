@@ -76,7 +76,7 @@ pipeline {
                         // sh 'sudo docker ps'
                         sh 'pwd'
                         sh 'ls -la'
-                        // sh 'sudo docker build -t tomcat -f Dockerfile-tomcat .'
+                        sh 'sudo docker build -t tomcat -f Dockerfile-tomcat .'
                     }
                 }
             }

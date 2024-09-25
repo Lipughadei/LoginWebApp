@@ -90,7 +90,7 @@ pipeline {
                 }
             }
         }
-        stag('ansible'){
+        stage('ansible'){
             agent {
                 label 'agent2'
             }

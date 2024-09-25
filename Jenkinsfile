@@ -77,10 +77,10 @@ pipeline {
                         // sh 'sudo docker ps'
                         sh 'pwd'
                         sh 'ls -la'
-                        sh 'sudo docker build -t tomcat:1.0 -f Dockerfile-tomcat /home/ec2-user/jenkins/workspace/pipeline_job'
-                        sh 'sudo docker build -t mysql:1.0 -f Dockerfile-mysql /home/ec2-user/jenkins/workspace/pipeline_job'
-                        sh 'sudo docker tag tomcat:1.0 lipughadei/tomcat:v1.0'
-                        sh 'sudo docker tag mysql:1.0 lipughadei/mysql:v1.0'
+                        sh 'sudo docker build -t lipughadei/tomcat:v1.0 -f Dockerfile-tomcat /home/ec2-user/jenkins/workspace/pipeline_job'
+                        sh 'sudo docker build -t lipughadei/mysql:v1.0 -f Dockerfile-mysql /home/ec2-user/jenkins/workspace/pipeline_job'
+                        // sh 'sudo docker tag tomcat:1.0 lipughadei/tomcat:v1.0'
+                        // sh 'sudo docker tag mysql:1.0 lipughadei/mysql:v1.0'
                     }
                 }
             }

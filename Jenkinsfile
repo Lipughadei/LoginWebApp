@@ -17,11 +17,11 @@ pipeline {
                 sh 'whoami'
                 sh 'mvn clean package'
             }
-            // post {
-            //     success {
-            //         archiveArtifacts artifacts: 'target/*.war', followSymlinks: false
-            //     }
-            // }
+            post {
+                success {
+                    archiveArtifacts artifacts: 'target/*.war', followSymlinks: false
+                }
+            }
         }
 
         stage('upload to s3 bucket') {
@@ -118,11 +118,11 @@ pipeline {
         //     }
         // }
 
-        // stage('clean Workspace') {
-        //     steps {
-        //         cleanWs()
-        //         echo "clean ws"
-        //     }
-        // }
+        stage('clean Workspace') {
+            steps {
+                cleanWs()
+                echo "clean ws"
+            }
+        }
     }
 }

@@ -118,11 +118,11 @@ pipeline {
         //     }
         // }
 
-        stage('clean Workspace') {
-            steps {
-                cleanWs()
-                echo "clean ws"
-            }
-        }
+        // stage('clean Workspace') {
+        //     steps {
+        //         cleanWs()
+        //         echo "clean ws"
+        //     }
+        // }
     }
 }

@@ -74,7 +74,9 @@ pipeline {
                          sh 'aws s3 cp s3://bucket-war/artifactory/LoginWebApp.war /home/ec2-user'
                         // sh 'mv /home/ec2-user/jenkins/workspace/pipeline_job/LoginWebApp.war /home/ec2-user'
                         // sh 'sudo docker ps'
-                        sh 'sudo docker build -t tomcat -f Dockerfile-tomcat .'
+                        sh 'pwd'
+                        sh 'ls -la'
+                        // sh 'sudo docker build -t tomcat -f Dockerfile-tomcat .'
                     }
                 }
             }

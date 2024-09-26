@@ -109,7 +109,7 @@ pipeline {
                 //sh 'sudo ansible-playbook ansible1/implement1.yml' //if you connected your jenkins agent through root
                 echo '====================================================================='
                 //sh 'sudo ansible-playbook ansible1/implement1.yml' // if you connected your jenkins agent through ec2-user
-                sh 'cd ansible1/ && ansible-playbook implement1.yml'
+                sh 'cd ansible1/ && sudo ansible-playbook implement1.yml'
             }
         }
         // stage('deployment') {

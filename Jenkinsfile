@@ -90,7 +90,7 @@ pipeline {
                         // sh 'echo "Dockerhammer1@" | docker login -u "lipughadei" --password-stdin docker.io'
                         sh 'sudo docker push lipughadei/tomcat:v1.0'
                         sh 'sudo docker push lipughadei/mysql:v1.0'
-                        sh 'sudo Docker/docker-compose down'
+                        sh 'sudo ansible1/docker-compose down'
                     }
                 }
             }

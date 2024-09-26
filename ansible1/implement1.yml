@@ -4,5 +4,6 @@
   tasks:
     - name: docker compose up
       shell:
-        #chdir: /home/ec2-user/jenkins/workspace/pipeline_job/Docker
+        #chdir: /home/ec2-user/jenkins/workspace/pipeline_job/
+        chdir: .
         cmd: docker-compose up -d #cmd: sudo docker-compose up -d

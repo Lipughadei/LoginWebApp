@@ -82,6 +82,8 @@ pipeline {
                             sudo docker push lipughadei/tomcat:v1.0
                             sudo docker push lipughadei/mysql:v1.0
                         '''
+                        cleanWs()
+                        echo 'clean workspace'
                     }
                 }
             }
@@ -91,9 +93,13 @@ pipeline {
                 label 'agent2'
             }
             steps {
-                sh 'pwd'
-                sh 'ls -la'
-                sh 'cd ansible1/ && sudo ansible-playbook implement1.yml'
+                sh '''
+                pwd
+                ls -la
+                cd ansible1/ && sudo ansible-playbook implement1.yml
+                '''
+                cleanWs()
+                echo 'clean workspace'
             }
         }
         stage('clean Workspace') {

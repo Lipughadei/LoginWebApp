@@ -102,6 +102,8 @@ pipeline {
                 sh 'pwd'
                 sh 'ls -la'
                 // sh 'sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose'
+                sh 'cd /home/ec2-user/jenkins/workspace/pipeline_job/ansible1'
+                sh 'ansible-playbook implement1.yml'
             }
         }
         // stage('deployment') {

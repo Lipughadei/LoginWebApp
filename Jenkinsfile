@@ -103,7 +103,7 @@ pipeline {
                 sh 'ls -la'
                 // sh 'sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose'
                 sh 'cd ansible1/'
-                sh 'ansible-playbook ansible1/implement1.yml'
+                sh 'sudo ansible-playbook ansible1/implement1.yml'
             }
         }
         // stage('deployment') {

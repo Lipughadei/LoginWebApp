@@ -2,13 +2,11 @@
 #version: "3"
 services:
   db:
-      build:
-        image: lipughadei/mysql:v1.0
+      image: lipughadei/mysql:v1.0
       ports:
         - "3306:3306"
   ui:
-      build:
-        image: lipughadei/tomcat:v1.0
+      image: lipughadei/tomcat:v1.0
       ports:
         - "8080:8080"
       links:

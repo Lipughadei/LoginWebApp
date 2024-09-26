@@ -2,7 +2,7 @@
 #version: "3"
 services:
   db:
-      image: lipughadei/mysql:v1.0
+      image: lipughadei/mysql:v1.0 # specify from where you want to pull that image
       ports:
         - "3306:3306"
   ui:

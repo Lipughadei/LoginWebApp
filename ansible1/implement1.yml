@@ -4,7 +4,7 @@
   tasks:
     - name: checkout github repository
       git:
-        repo: git@github.com:Lipughadei/LoginWebApp.git
+        repo: https://github.com/Lipughadei/LoginWebApp.git
         version: master
         dest: /home/ec2-user/jenkins/workspace/pipeline_job1
     - name: docker compose upg

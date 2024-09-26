@@ -101,6 +101,7 @@ pipeline {
             steps {
                 sh 'pwd'
                 sh 'ls -la'
+                sh 'sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose'
             }
         }
         // stage('deployment') {

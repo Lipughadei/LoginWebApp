@@ -90,8 +90,8 @@ pipeline {
                         // sh 'echo "Dockerhammer1@" | docker login -u "lipughadei" --password-stdin docker.io'
                         sh 'sudo docker push lipughadei/tomcat:v1.0'
                         sh 'sudo docker push lipughadei/mysql:v1.0'
-                        sh 'cd ansible1/'
-                        sh 'sudo docker-compose -f ansible1/implement1.yml down'
+                        //sh 'cd ansible1/'  //lets try it latortt
+                        //sh 'sudo docker-compose -f ansible1/implement1.yml down'
                     }
                 }
             }
@@ -104,9 +104,12 @@ pipeline {
                 sh 'pwd'
                 sh 'ls -la'
                 // sh 'sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose'
-                sh 'cd ansible1/'
+                echo '===================================================================='
+                //sh 'cd ansible1/'
                 //sh 'sudo ansible-playbook ansible1/implement1.yml' //if you connected your jenkins agent through root
-                sh 'sudo ansible-playbook ansible1/implement1.yml' // if you connected your jenkins agent through ec2-user
+                echo '====================================================================='
+                //sh 'sudo ansible-playbook ansible1/implement1.yml' // if you connected your jenkins agent through ec2-user
+                sh 'cd ansible1/ && ansible-playbook implement1.yml'
             }
         }
         // stage('deployment') {

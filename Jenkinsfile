@@ -94,9 +94,9 @@ pipeline {
             }
             steps {
                 sh '''
-                pwd
-                ls -la
-                cd ansible1/ && sudo ansible-playbook implement1.yml
+                    pwd
+                    ls -la
+                    cd ansible1/ && sudo ansible-playbook implement1.yml
                 '''
                 cleanWs()
                 echo 'clean workspace'

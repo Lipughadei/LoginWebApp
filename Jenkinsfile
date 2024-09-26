@@ -102,7 +102,7 @@ pipeline {
                 sh 'pwd'
                 sh 'ls -la'
                 // sh 'sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose'
-                sh 'cd ansible1'
+                sh 'cd ansible1/'
                 sh 'ansible-playbook implement1.yml'
             }
         }

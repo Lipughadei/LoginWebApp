@@ -2,8 +2,11 @@
 - hosts: module1
   become: true #become: false
   tasks:
+    - name: checkout github repository
+      git:
+        repo: https://github.com/Lipughadei/LoginWebApp.git
+        dest: /home/ec2-user/jenkins/workspace/pipeline_job
     - name: docker compose up
       shell:
-        #chdir: /home/ec2-user/jenkins/workspace/pipeline_job/
-        chdir: .
+        chdir: /home/ec2-user/jenkins/workspace/pipeline_job/Docker
         cmd: docker-compose up -d #cmd: sudo docker-compose up -d

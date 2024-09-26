@@ -103,7 +103,8 @@ pipeline {
                 sh 'ls -la'
                 // sh 'sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose'
                 sh 'cd ansible1/'
-                sh 'sudo ansible-playbook ansible1/implement1.yml'
+                //sh 'sudo ansible-playbook ansible1/implement1.yml' //if you connected your jenkins agent through root
+                sh 'sudo ansible-playbook ansible1/implement1.yml' // if you connected your jenkins agent through ec2-user
             }
         }
         // stage('deployment') {

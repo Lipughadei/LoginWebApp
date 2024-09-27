@@ -1,1 +1,4 @@
-jenkin_server--> jenkins, git, java, 
+jenkin_server--> jenkins, git, java(master_node).
+docker_server_agent1--> java(for agent connection), git, docker, docker-compose.
+ansible_server_agent2--> java(for agent connection), git, ansible.
+

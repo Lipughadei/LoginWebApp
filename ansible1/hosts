@@ -1,2 +1,2 @@
 [module1]
-13.201.94.198 ansible_user=ec2-user ansible_private_key_file=/etc/ansible/docker1.pem
+65.2.124.223 ansible_user=ec2-user ansible_private_key_file=/etc/ansible/docker1.pem

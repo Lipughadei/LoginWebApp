@@ -2,3 +2,4 @@ jenkin_server--> jenkins, git, java(master_node).
 docker_server_agent1--> java(for agent connection), git, docker, docker-compose.
 ansible_server_agent2--> java(for agent connection), git, ansible.
 
+change the inventory file path from /etc/ansible/hosts to hosts if you are using the github repository

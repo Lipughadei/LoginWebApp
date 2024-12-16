@@ -1,0 +1,70 @@
+The mvn deploy command is used in Maven to deploy your project's artifacts (like JARs, WARs, etc.) to a remote repository.
+This is typically done after building your project and is often used in a continuous integration/continuous deployment (CI/CD) pipeline.
+
+Here’s a basic example of how to use the mvn deploy command:
+
+bash
+
+Verify
+
+Open In Editor
+Run
+Copy code
+mvn clean deploy
+Explanation:
+mvn: This is the command to run Maven.
+clean: This phase cleans the target directory, removing any previously compiled artifacts.
+deploy: This phase packages the project and deploys the artifact to the remote repository specified in your pom.xml file.
+Example pom.xml Configuration:
+To successfully deploy, your pom.xml should have the necessary configuration for the distribution management section, which specifies the remote repository where the artifacts will be deployed.
+Here’s a simple example:
+
+xml
+
+Verify
+
+Open In Editor
+Run
+Copy code
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <distributionManagement>
+        <repository>
+            <id>my-repo</id>
+            <url>http://my.repository.url/repo</url>
+        </repository>
+    </distributionManagement>
+</project>
+Authentication:
+If your remote repository requires authentication, you can configure your credentials in the settings.xml file located in the .m2 directory (usually found in your home directory).
+Here’s an example of how to set that up:
+
+xml
+
+Verify
+
+Open In Editor
+Run
+Copy code
+<settings>
+    <servers>
+        <server>
+            <id>my-repo</id>
+            <username>your-username</username>
+            <password>your-password</password>
+        </server>
+    </servers>
+</settings>
+Running the Command:
+After setting up your pom.xml and settings.xml, you can run the mvn clean deploy command in your terminal from the root directory of your Maven project.
+This will build your project and deploy the resulting artifacts to the specified remote repository.
+
+Note:
+Make sure you have the necessary permissions to deploy to the specified repository, and ensure that your project is properly configured to avoid any deployment issues.

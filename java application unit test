@@ -1,0 +1,50 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    // Compile the application
+                    sh 'mvn clean package'
+                }
+            }
+        }
+
+        stage('Unit Test') {
+            steps {
+                script {
+                    // Run unit tests and capture the result
+                    def testResult = sh(script: 'mvn test', returnStatus: true)
+
+                    // Check the result of the unit tests
+                    if (testResult == 0) {
+                        echo 'Unit tests passed successfully!'
+                    } else {
+                        echo 'Unit tests failed!'
+                        // Optionally, you can fail the build
+                        error('Stopping the pipeline due to unit test failures.')
+                    }
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                script {
+                    // Deploy the application if tests pass
+                    sh 'mvn deploy'
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Build and tests succeeded!'
+        }
+        failure {
+            echo 'Build or tests failed!'
+        }
+    }
+}
